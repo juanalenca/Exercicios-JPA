@@ -6,27 +6,31 @@ import javax.persistence.Persistence;
 
 import model.basic.User;
 
-public class NewUser {
-	
+public class AlterUser1 {
+
 	public static void main(String[] args) {
-		
-		//cria o EntityManager
+
+
 		EntityManagerFactory emf = Persistence
 				.createEntityManagerFactory("exercicios-jpa");
-		
-		//classe que nos ajuda a persistir os dados no database
 		EntityManager em = emf.createEntityManager();
 		
-		User newUser = new User("Juan", "juan@lanche.com.br");
 		
 		em.getTransaction().begin();
-		em.persist(newUser);
+		
+		User user = em.find(User.class, 1L);
+		user.setName("Fulano");
+		user.setEmail("Fulano@lanche.com.br");
+		
+		//faz o update no estado gerenciado
+		em.merge(user);
+		
 		em.getTransaction().commit();
+
 		
-		System.out.println("The Id generated was " + newUser.getId());
-		
-		em.clear();
+		em.close();
 		emf.close();
+		
 		
 	}
 

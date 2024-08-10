@@ -1,15 +1,18 @@
 package model.basic;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class User {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id; 
 	
-	private String nome;
+	private String name;
 	
 	
 	private String email;
@@ -19,7 +22,7 @@ public class User {
 	}
 	
 	public User(String nome, String email) {
-		this.nome = nome;
+		this.name = nome;
 		this.email = email;
 	}
 	
@@ -32,12 +35,12 @@ public class User {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String nome) {
+		this.name = nome;
 	}
 
 	public String getEmail() {
