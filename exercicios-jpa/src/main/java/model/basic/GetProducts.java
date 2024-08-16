@@ -15,7 +15,7 @@ public class GetProducts {
 		List<Product> products = dao.getAll();
 		
 		for(Product product: products) {
-			System.out.println("ID: " + product.getId() + ", Nmae: " + product.getName());
+			System.out.println("ID: " + product.getId() + ", Name: " + product.getName());
 		}
 		
 		double absolutPrice = products
@@ -24,7 +24,7 @@ public class GetProducts {
 				.reduce(0.0, (absolute, price) -> absolute + price) 
 				.doubleValue();
 		
-		System.out.println("The absolute price is $ " + absolutPrice);
+		System.out.println("The absolute price is $" + absolutPrice);
 		
 		dao.closeEntityManager();
 		
