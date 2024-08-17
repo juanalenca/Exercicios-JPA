@@ -9,6 +9,8 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>model.basic.User</class>
         <class>model.basic.Product</class>
+        <class>model.onetoone.Seat</class>
+        <class>model.onetoone.Client</class>
         
         <properties>
             <property name="javax.persistence.jdbc.driver"

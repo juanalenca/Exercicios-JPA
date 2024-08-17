@@ -65,6 +65,11 @@ public class DAO<E> {
 	}
 	
 	
+	public E getById(Object id) {
+		return em.find(Class, id);
+	}
+	
+	
 	public List<E> getAll() {
 		return this.getAll(10, 0);
 	}
