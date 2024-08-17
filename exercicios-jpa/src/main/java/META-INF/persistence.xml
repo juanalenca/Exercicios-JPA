@@ -11,6 +11,8 @@
         <class>model.basic.Product</class>
         <class>model.onetoone.Seat</class>
         <class>model.onetoone.Client</class>
+        <class>model.onetomany.CustomerOrder</class>
+        <class>model.onetomany.ItemOrdered</class>
         
         <properties>
             <property name="javax.persistence.jdbc.driver"
