@@ -7,12 +7,22 @@
         
  
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		
+		<mapping-file>META-INF/queries.xml</mapping-file>
+		
         <class>model.basic.User</class>
         <class>model.basic.Product</class>
         <class>model.onetoone.Seat</class>
         <class>model.onetoone.Client</class>
         <class>model.onetomany.CustomerOrder</class>
         <class>model.onetomany.ItemOrdered</class>
+        <class>model.manytomany.Nephew</class>
+        <class>model.manytomany.Uncle</class>
+        <class>model.manytomany.Movie</class>
+        <class>model.manytomany.Actor</class>
+        <class>model.composition.Address</class>
+        <class>model.composition.Supplier</class>
+        <class>model.composition.Employee</class>
         
         <properties>
             <property name="javax.persistence.jdbc.driver"

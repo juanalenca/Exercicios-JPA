@@ -94,6 +94,24 @@ public class DAO<E> {
 	}
 	
 	
+	public List<E> consult(String nameConsult, Object... params) {
+		
+		TypedQuery<E> query = em.createNamedQuery(nameConsult, Class);
+		
+		for (int i = 0; i < params.length; i += 2) {
+			query.setParameter(params[i].toString(), params[i + 1]);
+		}
+		
+		return query.getResultList();
+	}
+	
+	
+	public E consultOne(String nameConsult, Object... params) {
+		List<E> list = consult(nameConsult, params);
+		return list.isEmpty() ? null : list.get(0);
+	}
+	
+	
 	public void closeEntityManager() {
 		em.close(); 
 	}

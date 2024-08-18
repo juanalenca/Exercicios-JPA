@@ -11,19 +11,27 @@ public class ItemOrdered {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "order_id")  // Opcionalmente, especifica o nome da coluna na tabela
+    
+    /*eager initialization é uma inicialização ansiosa, ou seja, 
+    é uma é algo que é inicializado imediatamente no ponto de sua definição*/
+    @ManyToOne(fetch = FetchType.EAGER) //EAGER é o valor default de fetch (...ToOne -> EAGER)
+    @JoinColumn(name = "order_id")
     private CustomerOrder order;
 
+    
     @ManyToOne
     private Product product;
 
+    
     @Column(unique = false)
     private int quantity;
 
+    
     @Column(unique = false)
     private Double price;
 
+    
+    
     public ItemOrdered() {}
 
     public ItemOrdered(CustomerOrder order, Product product, int quantity) {
@@ -32,6 +40,8 @@ public class ItemOrdered {
         this.setQuantity(quantity);
     }
 
+    
+    
     public Long getId() {
         return id;
     }
