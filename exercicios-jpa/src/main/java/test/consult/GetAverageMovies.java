@@ -10,8 +10,10 @@ public class GetAverageMovies {
 		DAO<NoteMovie> dao = new DAO<>(NoteMovie.class);
 		NoteMovie note = dao.consultOne("getOverallAverageOfMovies");
 		
+		
 		System.out.println(note.getAverage());
 
+		
 		dao.closeEntityManager();
 		
 	}

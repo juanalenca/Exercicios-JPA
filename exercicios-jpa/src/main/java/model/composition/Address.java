@@ -2,7 +2,7 @@ package model.composition;
 
 import javax.persistence.Embeddable;
 
-//Colocando a table address dentro de supplier and employee
+//@Embeddable -> Colocando a table address dentro de supplier and employee
 @Embeddable
 public class Address {
 	
