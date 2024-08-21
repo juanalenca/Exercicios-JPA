@@ -23,6 +23,8 @@
         <class>model.composition.Address</class>
         <class>model.composition.Supplier</class>
         <class>model.composition.Employee</class>
+        <class>model.heritage.Student</class>
+        <class>model.heritage.ScholarshipStudent</class>
         
         <properties>
             <property name="javax.persistence.jdbc.driver"
